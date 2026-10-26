@@ -1,0 +1,11 @@
+ballista-hudi
+Copyright 2026 ballista-hudi contributors
+
+This product includes software derived from Apache DataFusion Ballista:
+Copyright 2016-2026 The Apache Software Foundation.
+
+This product uses test fixtures from Apache Hudi RS:
+Copyright 2023 The Apache Software Foundation.
+
+These products include software developed at
+The Apache Software Foundation (http://www.apache.org/).

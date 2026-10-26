@@ -1,0 +1,32 @@
+[package]
+name = "ballista-hudi"
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.94.1"
+description = "Standalone Apache Hudi read integration for Apache DataFusion Ballista"
+license = "Apache-2.0"
+readme = "README.md"
+# Wait for an official Hudi release with DataFusion 55 support before publishing.
+publish = false
+
+[dependencies]
+ballista-core = "55.0.0"
+datafusion = "55.2"
+datafusion-proto = "55.2"
+# Official merge of apache/hudi-rs#698; no private fork or floating branch.
+hudi-datafusion = { git = "https://github.com/apache/hudi-rs.git", rev = "017f0bb278ab882898dd78cd0b25a0a9db1c979e", default-features = false }
+prost = "0.14"
+tokio = { version = "1", features = ["rt-multi-thread"] }
+
+[dev-dependencies]
+ballista = { version = "55.0.0", features = ["standalone"] }
+ballista-executor = { version = "55.0.0", default-features = false }
+ballista-scheduler = { version = "55.0.0", default-features = false }
+hudi-test = { git = "https://github.com/apache/hudi-rs.git", rev = "017f0bb278ab882898dd78cd0b25a0a9db1c979e" }
+tokio = { version = "1", features = ["macros", "rt-multi-thread"] }
+
+[profile.dev]
+debug = 0
+
+[profile.test]
+debug = 0
